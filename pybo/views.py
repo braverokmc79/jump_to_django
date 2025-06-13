@@ -58,12 +58,7 @@ def answer_create(request, question_id):
         return HttpResponseNotAllowed('Only POST is possible.')
     context = {'question': question, 'form': form}
     return render(request, 'pybo/question_detail.html', context)    
-    
-    question.answers.create(  # ✅ answer_set → answers
-        content=request.POST.get('content'),
-        create_date=timezone.now()
-    )
-    return redirect('pybo:detail', question_id=question.id)
+ 
 
 
 
