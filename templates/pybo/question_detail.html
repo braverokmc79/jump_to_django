@@ -2,3 +2,31 @@
 <div>
     {{ question.content }}
 </div>
+
+<hr>
+
+<h5>{{question.answers.count}}</h5>
+<div>
+    <ul>
+        {% for answer in answers %}
+            <li>
+                <strong>{{ answer.create_user.username }}</strong>:
+                {{ answer.content }}
+                <span class="text-muted">
+                    {{ answer.create_date|date:"Y-m-d H:i" }}
+                </span>
+            </li>
+        {% endfor %}        
+    </ul>
+</div>
+
+
+
+
+
+<hr>
+<form action="{% url 'pybo:answer_create' question.id %}" method="post">
+{% csrf_token %}
+    <textarea name="content" id="content" rows="15"></textarea>
+    <input type="submit" value="답변등록">
+</form>
