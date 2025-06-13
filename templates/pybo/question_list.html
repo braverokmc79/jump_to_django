@@ -30,6 +30,18 @@
         {% endif %}
         </tbody>
     </table>
+
+
+
+    <!-- 페이징 UI 호출 -->
+{% load pagination_tags %}
+
+<!-- 페이징처리 시작 -->
+{% render_pagination question_list %}
+<!-- 페이징처리 끝 -->
+
+   
+
     <a href="{% url 'pybo:question_create'  %}"  class="btn btn-primary" >질문등록</a>
 </div>
 

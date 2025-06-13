@@ -64,3 +64,28 @@ git commit -m "refactor: DB 모델 구조 개선"
 git commit -m "test: 유저 모델 테스트 추가"
 git commit -m "chore: 패키지 의존성 업데이트"
 
+```
+
+
+
+### 대량 테스트 데이터 만들기
+
+```bash
+(mysite) c:\projects\mysite>python manage.py shell
+
+
+##질문 데이터를 생성하기 위한 모듈을 임포트하자.
+ from pybo.models import Question
+ from django.utils import timezone
+
+
+### 그리고 다음과 같이 300개의 테스트 데이터를 생성하자.
+for i in range(300):
+     q = Question(subject='테스트 데이터입니다:[%03d]' % i, content='내용무', create_date=timezone.now())
+     q.save()
+
+
+```
+
+
+
