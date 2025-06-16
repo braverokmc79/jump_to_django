@@ -1,6 +1,8 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 class Question(models.Model):
+    author =models.ForeignKey(User,  on_delete=models.CASCADE, null=True)
     subject = models.CharField("제목", max_length=200)
     content = models.TextField("내용")
     create_date = models.DateTimeField("작성일", auto_now_add=True)

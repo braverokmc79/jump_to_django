@@ -1,6 +1,6 @@
+# Python 버전:  Python 3.12.4 권장
 # 설치 방법 :1)리눅스   PYTHONUTF8=1 pip install -r requirements.txt
 #2)파월셀 :  $env:PYTHONUTF8=1; pip install -r requirements.txt
-
 Django==5.2.1 
 djangorestframework>=3.14
 asgiref==3.8.1

@@ -31,7 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    "jazzmin",  # 반드시 admin보다 먼저 위치해야 함
+    'jazzmin',
+    #"unfold",  # 반드시 admin보다 먼저 위치해야 함
     #'common.apps.CommonConfig',  
     'django.contrib.admin',
     'django.contrib.auth',
